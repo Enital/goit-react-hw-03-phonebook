@@ -1,0 +1,9 @@
+li{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+.delete{
+    margin-left: 10px;
+    background-color: lightcoral;
+}
