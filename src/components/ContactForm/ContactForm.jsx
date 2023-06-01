@@ -23,7 +23,7 @@ handleSubmit = event => {
 reset = () => {
     this.setState({ name: '', number: ''});
 }
-    
+
 render() {
     
     return (

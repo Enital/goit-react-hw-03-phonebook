@@ -14,6 +14,11 @@ class App extends React.Component {
       { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },],
     filter: '',
   }
+
+  componentDidUpdate() {
+    localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
+  }
+  
   handleChange = event => {
     const { name, value } = event.currentTarget;
     this.setState({ [name]: value });
@@ -22,7 +27,7 @@ class App extends React.Component {
   formSubmit = ({ id, name, number }) => {
     const names = this.state.contacts.map(contact => contact.name);
     
-    const lowerCaseName = name.toLowerCase();console.log(lowerCaseName)
+    const lowerCaseName = name.toLowerCase();
     const lowerCaseNames = names.map(name => name.toLowerCase());
     if (lowerCaseNames.includes(lowerCaseName)) {
       alert(`${name} is already in Contacts!`);
